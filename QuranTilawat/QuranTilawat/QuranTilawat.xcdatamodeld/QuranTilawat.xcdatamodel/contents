@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CustomizePlayListMO" representedClassName="CustomizePlayListMO" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="playlistname" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CustomizeSuratMO" representedClassName="CustomizeSuratMO" syncable="YES">
+        <attribute name="endayat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startayat" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surat" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CustomizePlayListMO" positionX="45" positionY="117" width="128" height="73"/>
+        <element name="CustomizeSuratMO" positionX="-288" positionY="18" width="128" height="103"/>
+    </elements>
+</model>
