@@ -39,9 +39,10 @@ class QTSuratModelController: QTModelController {
                 let ayatName = String(mp3FileName)
                 let currentSurat = ayatName!.substring(to: 3)
                 if let ayatPath = mainBundle.path(forResource: ayatName, ofType: "mp3") {
-                    var counter = 0
+                    //var counter = 0
                     var imgNm: String = ""
-                    for character in ayatName!.characters {
+                    
+                    /*for character in ayatName!.characters {
                         counter = counter + 1
                         if character != "0" && counter <= 3 {
                             imgNm.append(character)
@@ -53,7 +54,33 @@ class QTSuratModelController: QTModelController {
                             } else if character != "0" && counter > 4 {
                                 imgNm.append(character)
                             }
-                        }
+                        }*/
+                    
+                    let imageName = Int(ayatName!)
+                    let imageNameString = String(describing: imageName!)
+                    var suratNo = ""
+                    var ayatNo = ""
+                    if imageNameString.characters.count == 4 {
+                        print("Four")
+                        suratNo = imageNameString.substring(to: 1)
+                        let ayatNumber = imageNameString.substring(from: 2)
+                        ayatNo = convertIntoString(value: Int(ayatNumber)!)
+                    }
+                    else if imageNameString.characters.count == 5 {
+                        print("Five")
+                        suratNo = imageNameString.substring(to: 2)
+                        let ayatNumber = imageNameString.substring(from: 3)
+                        ayatNo = convertIntoString(value: Int(ayatNumber)!)
+                        
+                    }
+                    else if imageNameString.characters.count == 6 {
+                        print("Six")
+                        suratNo = imageNameString.substring(to: 3)
+                        let ayatNumber = imageNameString.substring(from: 4)
+                        ayatNo = convertIntoString(value: Int(ayatNumber)!)
+                    }
+                    imgNm = "\(suratNo)_\(ayatNo)"
+                    
                     if previousSurat == currentSurat || i == 0 {
                         ayatModel.append(QTAyatModel(name: imgNm, ext: "mp3",path: ayatPath,startAyat: nil,endAyat: nil))
                         previousSurat = currentSurat
@@ -72,7 +99,14 @@ class QTSuratModelController: QTModelController {
             }
         }
     }
+    
+    func convertIntoString(value: Int) -> String{
+        return String(value)
+    }
+    
 }
+
+
 
 
 extension String {
